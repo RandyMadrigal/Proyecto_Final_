@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CasosDeUso.Casos_de_uso
+namespace CasosDeUso.Adaptador_de_interfaz
 {
-    class LogicaTimer
+    interface IActualizar
     {
+        public void ActualizarDatos(int id, string texto);
+
     }
 }

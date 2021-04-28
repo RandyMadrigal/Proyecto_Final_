@@ -1,34 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using CasosDeUso.Adaptador_de_interfaz;
 
 namespace CasosDeUso.Casos_de_uso
 {
-   public class Casos_de_uso
+   public class Datos
     {
 
-        Mostrar Adaptador = new Mostrar();
-        Contador Adaptador2 = new Contador();
-        Insertar Adaptador3 = new Insertar();
-        Actualizar Adaptador4 = new Actualizar();
-        
+        Adaptador ObjAdaptador = new Adaptador();
+
         //datos
         private int Id;
         private string Nombre;
+
         //game
         private Random aleatorio = new Random();
         private int Num1;
         private int Num2;
         private int resultado;
+        
         //timer
         private int tiempo;
         private bool inicio;
 
-        public Casos_de_uso() { tiempo = 0; }
+
+        public Datos() { tiempo = 0; }
 
         public int ID
         {
@@ -44,22 +40,22 @@ namespace CasosDeUso.Casos_de_uso
         /////////////////////////
         public DataTable Enviar()
         {
-            return Adaptador.MostrarTodosLosDatos();
+            return ObjAdaptador.MostrarTodosLosDatos();
         }
 
         public string Contador()
         {
-            return Adaptador2.GetId();
+            return ObjAdaptador.GetId();
         }
         
         public void Insertar(string nombre)
         {
-            Adaptador3.InsertarDatos(NOMBRE = nombre);
+            ObjAdaptador.InsertarDatos(NOMBRE = nombre);
         }
 
         public void Actualizar(string id, string texto)
         {
-            Adaptador4.ActualizarDatos( int.Parse(id), texto);
+            ObjAdaptador.ActualizarDatos( int.Parse(id), texto);
         }
 
         ///// Quiz
@@ -129,7 +125,7 @@ namespace CasosDeUso.Casos_de_uso
         {
             TIEMPO++;
         }
-
+        //TIMER
 
     }
 }

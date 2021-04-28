@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CasosDeUso.Casos_de_uso;
 
@@ -14,7 +8,7 @@ namespace Dominio
     public partial class VentanaPrincipal : Form
     {
         private Image ImagenInicio;
-        Casos_de_uso ObjCasosDeUso = new Casos_de_uso();
+        Datos ObjCasosDeUso = new Datos();
         
 
         public VentanaPrincipal()
@@ -28,7 +22,6 @@ namespace Dominio
            pictureBox1.Image = ImagenInicio;
 
             ContadorLabel.Text = ObjCasosDeUso.TIEMPO.ToString() + " SEG.";
-
 
             try 
             {
@@ -47,20 +40,18 @@ namespace Dominio
         {
             //Este objeto se utiliza para refrescar la consulta
             //en la que se muestran todos los datos de la tabla.
-            Casos_de_uso ObjCasosDeUso2 = new Casos_de_uso();
+            CasosDeUso.Casos_de_uso.Datos ObjCasosDeUso2 = new CasosDeUso.Casos_de_uso.Datos();
             dataGridView1.DataSource = ObjCasosDeUso2.Enviar(); //Obtener los datos ya introducidos a la base de datos
-           
         }
 
         private void GetTurno()
         {
-            Casos_de_uso ObjCasosDeUso2 = new Casos_de_uso();
+            CasosDeUso.Casos_de_uso.Datos ObjCasosDeUso2 = new CasosDeUso.Casos_de_uso.Datos();
             TurnoBox1.Text = ObjCasosDeUso2.Contador(); //Obtener Turno
         }
         
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 ObjCasosDeUso.Insertar(NombreBox.Text);
@@ -140,7 +131,6 @@ namespace Dominio
 
             try
             {
-
                 stop();
 
                MessageBox.Show($"{ObjCasosDeUso.Ganador(ResultadoBox.Text,Num1Box.Text, Num2Box.Text)}\n Resultado = {ObjCasosDeUso.Info(Num1Box.Text, Num2Box.Text)} " );
@@ -163,8 +153,6 @@ namespace Dominio
             {
                 MessageBox.Show($"{ex}");
             }
-
-
         }
 
         private void Cronometro_Tick(object sender, EventArgs e)
@@ -197,9 +185,6 @@ namespace Dominio
                     MostrarTodosLosDatos();
 
                 }
-
-                
-
             }
             catch(Exception ex)
             {
@@ -215,7 +200,5 @@ namespace Dominio
             ContadorLabel.Text = ObjCasosDeUso.TIEMPO.ToString() + " SEG.";
 
         }
-
     }
-
 }
