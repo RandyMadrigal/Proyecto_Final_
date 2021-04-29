@@ -28,7 +28,7 @@ namespace CasosDeUso.Adaptador_de_interfaz
             string dato = ObjSqlContador.Contador();
 
             return dato;
-            //ALMACENA LA CONSULTA REALIZADA EN LA CAPA DE DATOS, para mostrar TODOS LOS DATOS DE LA BASE DE DATOS
+            //ALMACENA LA CONSULTA, PARA ALMACENAR EL ID 
         }
 
         public void InsertarDatos(string nombre)
@@ -44,7 +44,7 @@ namespace CasosDeUso.Adaptador_de_interfaz
             tabla = ObjSqlMostrar.MostrarTodosLosDatosSql();
 
             return tabla;
-            //ALMACENA LA CONSULTA REALIZADA EN LA CAPA DE DATOS, para mostrar TODOS LOS DATOS DE LA BASE DE DATOS
+            //ALMACENA LA CONSULTA REALIZADA, para mostrar TODOS LOS DATOS DE LA BASE DE DATOS
 
         }
     }

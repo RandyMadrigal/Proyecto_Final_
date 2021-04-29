@@ -22,8 +22,8 @@ namespace Interfaz_Externa
             operacion.Parameters.AddWithValue("@RESULTADO", texto);
             
             operacion.Parameters.AddWithValue("@ID", idturno);
-            
             //Parametros que recibe el procedimiento almacenado
+
 
             operacion.ExecuteNonQuery(); // realiza operacion de insert delete update
 
