@@ -6,7 +6,6 @@ namespace CasosDeUso.Casos_de_uso
 {
    public class Datos
     {
-
         Adaptador ObjAdaptador = new Adaptador();
 
         //datos
