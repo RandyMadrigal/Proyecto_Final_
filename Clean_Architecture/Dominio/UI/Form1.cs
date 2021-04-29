@@ -21,10 +21,13 @@ namespace Dominio
            ImagenInicio = Image.FromFile(@"UI\Imagen\git.gif");
            pictureBox1.Image = ImagenInicio;
 
+            MessageBox.Show(MetodoDeUso());
+
             ContadorLabel.Text = ObjCasosDeUso.TIEMPO.ToString() + " SEG.";
 
             try 
             {
+
                 Btn_iniciar.Enabled = false;
                 MostrarTodosLosDatos();
                 GetTurno();
@@ -200,5 +203,18 @@ namespace Dominio
             ContadorLabel.Text = ObjCasosDeUso.TIEMPO.ToString() + " SEG.";
 
         }
+
+        public string MetodoDeUso()
+        {
+            return "\tMetodo para utilizar la APP\n\n" +
+                "\nA) Ingresar su nombre\n" +
+                "\nB) Seleccionar su nombre en la tabla de resultado \n" +
+                "\nC) Presionar el boton de iniciar para resolver la operacion matematica con un tiempo de 10 SEG\n" +
+                "\nD) Si pasan los 10 seg y no resolvio la operación se actualiza su estado con 'Perdedor' / En caso contrario " +
+                "Su estado se actualiza a 'Ganador' ";
+        }
+        
+
+
     }
 }
